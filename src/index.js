@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", initPage)
 function initPage(){
     getToys()
     toyHandler()
-    // likeHandler()
+    likeHandler()
 }
 
 function getToys(){
@@ -72,4 +72,15 @@ function submitToy(event) {
     return response.json()
   })
   .then(displayToys)
+}
+
+function likeHandler(){
+    const toyBtns = document.querySelectorAll(".like-btn")
+    toyBtns.forEach(function(button){
+      button.addEventListener('click', increaseLikes)
+    })
+}
+
+function increaseLikes(event){
+  debugger
 }
